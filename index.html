@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Servicios - Mi Empresa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .services-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px;
+            background-color: #fff;
+        }
+        .service-card {
+            width: 250px;
+            padding: 20px;
+            margin: 10px;
+            background-color: #ecf0f1;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover {
+            transform: scale(1.05);
+        }
+        .service-card h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .service-card p {
+            display: none;
+            font-size: 14px;
+            color: #34495e;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Bienvenidos a Mi Empresa</h1>
+        <p>Descubre nuestros servicios</p>
+    </header>
+
+    <section class="services-section">
+        <div class="service-card" onclick="toggleServiceDetails(1)">
+            <h3>Desarrollo Web</h3>
+            <p id="service-1">Creamos sitios web personalizados y adaptados a tus necesidades, desde páginas estáticas hasta aplicaciones web dinámicas.</p>
+        </div>
+        <div class="service-card" onclick="toggleServiceDetails(2)">
+            <h3>Consultoría IT</h3>
+            <p id="service-2">Te ofrecemos asesoramiento experto en tecnologías de la información para optimizar procesos y aumentar la productividad de tu empresa.</p>
+        </div>
+        <div class="service-card" onclick="toggleServiceDetails(3)">
+            <h3>Diseño Gráfico</h3>
+            <p id="service-3">Diseñamos logotipos, material publicitario y todo lo necesario para que tu marca se vea profesional y atractiva.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Mi Empresa. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function toggleServiceDetails(serviceId) {
+            const serviceParagraph = document.getElementById(`service-${serviceId}`);
+            if (serviceParagraph.style.display === "none" || serviceParagraph.style.display === "") {
+                serviceParagraph.style.display = "block";
+            } else {
+                serviceParagraph.style.display = "none";
+            }
+        }
+    </script>
+    
+</body>
+</html>
