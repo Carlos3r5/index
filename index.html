@@ -5,11 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trámites y tecnología fácil en México</title>
     <meta name="description" content="Guías fáciles para trámites gubernamentales y tecnología en México. CURP, SAT, IMSS, apps y más.">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #1f2937;
+            color: white;
+            padding: 1rem;
+            z-index: 1000;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        .cookie-banner.show {
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
+    <!-- Navigation -->
     <nav class="bg-white shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-center py-4">
@@ -28,6 +55,7 @@
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
+            <!-- Mobile Menu -->
             <div id="mobile-menu" class="md:hidden hidden pb-4">
                 <a href="#inicio" class="block py-2 text-gray-700 hover:text-blue-600">Inicio</a>
                 <a href="#tramites" class="block py-2 text-gray-700 hover:text-blue-600">Trámites</a>
@@ -38,6 +66,7 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section id="inicio" class="gradient-bg text-white py-20">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <h2 class="text-4xl md:text-6xl font-bold mb-6">Trámites y tecnología fácil en México</h2>
@@ -48,6 +77,7 @@
         </div>
     </section>
 
+    <!-- Featured Articles -->
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">Artículos destacados</h3>
@@ -86,6 +116,7 @@
         </div>
     </section>
 
+    <!-- AdSense Banner Placeholder -->
     <div class="bg-gray-100 py-8">
         <div class="max-w-4xl mx-auto px-4">
             <div class="bg-white border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
@@ -95,6 +126,7 @@
         </div>
     </div>
 
+    <!-- Trámites Section -->
     <section id="tramites" class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4">
             <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">Trámites gubernamentales</h3>
@@ -123,6 +155,7 @@
         </div>
     </section>
 
+    <!-- Tecnología Section -->
     <section id="tecnologia" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">Tecnología</h3>
@@ -146,6 +179,7 @@
         </div>
     </section>
 
+    <!-- Guías Rápidas Section -->
     <section id="guias" class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <h3 class="text-3xl font-bold mb-8 text-gray-800">Guías rápidas</h3>
@@ -160,6 +194,7 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contacto" class="py-16 bg-white">
         <div class="max-w-4xl mx-auto px-4">
             <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">Contacto</h3>
@@ -217,6 +252,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid md:grid-cols-4 gap-8">
@@ -256,6 +292,7 @@
         </div>
     </footer>
 
+    <!-- Privacy Policy Modal -->
     <div id="privacy-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
         <div class="bg-white rounded-lg max-w-4xl max-h-[80vh] overflow-y-auto">
             <div class="p-6">
@@ -285,6 +322,7 @@
         </div>
     </div>
 
+    <!-- GDPR Cookie Banner -->
     <div id="cookie-banner" class="cookie-banner">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
             <div class="mb-4 md:mb-0">
@@ -305,6 +343,125 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
-</body>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Add click handlers to nav links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+                
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Contact form handling
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show demo message
+            const messageDiv = document.getElementById('form-message');
+            messageDiv.classList.remove('hidden');
+            messageDiv.classList.add('bg-green-100', 'text-green-800');
+            
+            // Reset form
+            this.reset();
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                messageDiv.classList.add('hidden');
+            }, 5000);
+        });
+
+        // Cookie banner functionality
+        function showCookieBanner() {
+            const banner = document.getElementById('cookie-banner');
+            if (!localStorage.getItem('cookieConsent')) {
+                setTimeout(() => {
+                    banner.classList.add('show');
+                }, 2000);
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookie-banner').classList.remove('show');
+        }
+
+        function rejectCookies() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            document.getElementById('cookie-banner').classList.remove('show');
+        }
+
+        // Privacy modal functions
+        function openPrivacyModal() {
+            document.getElementById('privacy-modal').classList.remove('hidden');
+        }
+
+        function closePrivacyModal() {
+            document.getElementById('privacy-modal').classList.add('hidden');
+        }
+
+        // Initialize cookie banner
+        showCookieBanner();
+
+        // Add click handler for privacy link in footer
+        document.querySelector('a[href="#privacidad"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            openPrivacyModal();
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('privacy-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePrivacyModal();
+            }
+        });
+
+        // Simulate fast loading (WP Fastest Cache effect)
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.3s ease';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // SEO-friendly navigation highlighting
+        window.addEventListener('scroll', function() {
+            const sections = ['inicio', 'tramites', 'tecnologia', 'guias', 'contacto'];
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const element = document.getElementById(section);
+                const rect = element.getBoundingClientRect();
+                if (rect.top <= 100 && rect.bottom >= 100) {
+                    current = section;
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('text-blue-600');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('text-blue-600');
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96291075334797ca',t:'MTc1MzA4Mzc3NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
