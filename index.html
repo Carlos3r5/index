@@ -3,124 +3,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicio Técnico de PC y Laptops</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-     <link rel="stylesheet" href="styles.css">
-     <script src="scripts.js"></script>
-    <body>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <i class="fas fa-laptop-medical"></i> Servicio Técnico
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+    <title>Trámites y tecnología fácil en México</title>
+    <meta name="description" content="Guías fáciles para trámites gubernamentales y tecnología en México. CURP, SAT, IMSS, apps y más.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-file-alt text-2xl text-blue-600"></i>
+                    <h1 class="text-xl font-bold text-gray-800">Trámites y tecnología fácil</h1>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Inicio</a>
+                    <a href="#tramites" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Trámites</a>
+                    <a href="#tecnologia" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Tecnología</a>
+                    <a href="#guias" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Guías rápidas</a>
+                    <a href="#contacto" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Contacto</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-xl"></i>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#servicios">Servicios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contacto">Contacto</a>
-                        </li>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="#inicio" class="block py-2 text-gray-700 hover:text-blue-600">Inicio</a>
+                <a href="#tramites" class="block py-2 text-gray-700 hover:text-blue-600">Trámites</a>
+                <a href="#tecnologia" class="block py-2 text-gray-700 hover:text-blue-600">Tecnología</a>
+                <a href="#guias" class="block py-2 text-gray-700 hover:text-blue-600">Guías rápidas</a>
+                <a href="#contacto" class="block py-2 text-gray-700 hover:text-blue-600">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="inicio" class="gradient-bg text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-6xl font-bold mb-6">Trámites y tecnología fácil en México</h2>
+            <p class="text-xl md:text-2xl mb-8 opacity-90">Guías paso a paso para simplificar tu vida digital y gubernamental</p>
+            <button onclick="scrollToSection('tramites')" class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300">
+                Explorar guías
+            </button>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">Artículos destacados</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <article class="card-hover bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="bg-blue-500 h-48 flex items-center justify-center">
+                        <i class="fas fa-id-card text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-3">Cómo sacar tu CURP en línea</h4>
+                        <p class="text-gray-600 mb-4">Guía completa para obtener tu CURP de forma rápida y segura desde casa.</p>
+                        <span class="text-blue-600 font-medium">Leer más →</span>
+                    </div>
+                </article>
+                <article class="card-hover bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="bg-green-500 h-48 flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-3">Ciberseguridad básica para todos</h4>
+                        <p class="text-gray-600 mb-4">Tips esenciales para proteger tus datos personales en internet.</p>
+                        <span class="text-blue-600 font-medium">Leer más →</span>
+                    </div>
+                </article>
+                <article class="card-hover bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="bg-purple-500 h-48 flex items-center justify-center">
+                        <i class="fas fa-robot text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-3">IA fácil para principiantes</h4>
+                        <p class="text-gray-600 mb-4">Descubre cómo usar herramientas de inteligencia artificial en tu día a día.</p>
+                        <span class="text-blue-600 font-medium">Leer más →</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-gray-100 py-8">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="bg-white border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
+                <i class="fas fa-ad text-4xl text-gray-400 mb-4"></i>
+                <p class="text-gray-500">Espacio para anuncio AdSense (728x90)</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="tramites" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">Trámites gubernamentales</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="card-hover bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-id-card text-4xl text-blue-600 mb-4"></i>
+                    <h4 class="text-lg font-semibold mb-2">CURP</h4>
+                    <p class="text-gray-600 text-sm">Obtén tu Clave Única de Registro de Población</p>
+                </div>
+                <div class="card-hover bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-calculator text-4xl text-green-600 mb-4"></i>
+                    <h4 class="text-lg font-semibold mb-2">SAT</h4>
+                    <p class="text-gray-600 text-sm">Trámites fiscales y declaraciones</p>
+                </div>
+                <div class="card-hover bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-hospital text-4xl text-red-600 mb-4"></i>
+                    <h4 class="text-lg font-semibold mb-2">IMSS</h4>
+                    <p class="text-gray-600 text-sm">Servicios de seguridad social</p>
+                </div>
+                <div class="card-hover bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-car text-4xl text-yellow-600 mb-4"></i>
+                    <h4 class="text-lg font-semibold mb-2">Licencias</h4>
+                    <p class="text-gray-600 text-sm">Licencias de conducir y permisos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tecnologia" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">Tecnología</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-hover bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
+                    <i class="fas fa-mobile-alt text-4xl text-blue-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-3">Guías de apps</h4>
+                    <p class="text-gray-700">Aprende a usar las aplicaciones más útiles para tu día a día</p>
+                </div>
+                <div class="card-hover bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">
+                    <i class="fas fa-shield-alt text-4xl text-green-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-3">Ciberseguridad</h4>
+                    <p class="text-gray-700">Tips para proteger tu información personal en línea</p>
+                </div>
+                <div class="card-hover bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg">
+                    <i class="fas fa-brain text-4xl text-purple-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-3">IA fácil</h4>
+                    <p class="text-gray-700">Inteligencia artificial explicada de forma simple</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="guias" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h3 class="text-3xl font-bold mb-8 text-gray-800">Guías rápidas</h3>
+            <div class="bg-white rounded-lg shadow-lg p-12">
+                <i class="fas fa-download text-6xl text-blue-600 mb-6"></i>
+                <h4 class="text-2xl font-semibold mb-4">Próximamente</h4>
+                <p class="text-gray-600 mb-6">Guías paso a paso descargables para resolver tus trámites más rápido</p>
+                <button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300">
+                    Notificarme cuando estén listas
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">Contacto</h3>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h4 class="text-xl font-semibold mb-6">Envíanos un mensaje</h4>
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Nombre *</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Email *</label>
+                            <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Asunto</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Mensaje *</label>
+                            <textarea required rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                        </div>
+                        <button type="submit" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition duration-300 font-medium">
+                            Enviar mensaje
+                        </button>
+                    </form>
+                    <div id="form-message" class="mt-4 p-4 rounded-lg hidden">
+                        <p class="font-medium">Demo: Formulario enviado correctamente</p>
+                        <p class="text-sm opacity-75">En un sitio real, esto se conectaría con Contact Form 7</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-6">Síguenos</h4>
+                    <div class="space-y-4">
+                        <a href="#" class="flex items-center space-x-3 text-gray-700 hover:text-blue-600 transition duration-300">
+                            <i class="fab fa-facebook text-2xl"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-3 text-gray-700 hover:text-blue-600 transition duration-300">
+                            <i class="fab fa-twitter text-2xl"></i>
+                            <span>Twitter</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-3 text-gray-700 hover:text-blue-600 transition duration-300">
+                            <i class="fab fa-youtube text-2xl"></i>
+                            <span>YouTube</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-3 text-gray-700 hover:text-blue-600 transition duration-300">
+                            <i class="fab fa-instagram text-2xl"></i>
+                            <span>Instagram</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h5 class="text-lg font-semibold mb-4">Trámites y tecnología fácil</h5>
+                    <p class="text-gray-400">Simplificando la vida digital en México</p>
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold mb-4">Trámites</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">CURP</a></li>
+                        <li><a href="#" class="hover:text-white">SAT</a></li>
+                        <li><a href="#" class="hover:text-white">IMSS</a></li>
+                        <li><a href="#" class="hover:text-white">Licencias</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold mb-4">Tecnología</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Apps útiles</a></li>
+                        <li><a href="#" class="hover:text-white">Ciberseguridad</a></li>
+                        <li><a href="#" class="hover:text-white">IA fácil</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold mb-4">Legal</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#privacidad" class="hover:text-white">Política de privacidad</a></li>
+                        <li><a href="#" class="hover:text-white">Términos de uso</a></li>
+                        <li><a href="#" class="hover:text-white">Cookies</a></li>
                     </ul>
                 </div>
             </div>
-        </nav>
-    </header>
-
-    <main>
-        <section id="servicios" class="container py-5">
-            <h2 class="section-title">Nuestros Servicios</h2>
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card">
-                        <i class="fas fa-tools service-icon"></i>
-                        <h3>Reparación de Hardware</h3>
-                        <p>Diagnóstico y reparación de componentes como placas madre, discos duros, memorias RAM, etc.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card">
-                        <i class="fas fa-laptop service-icon"></i>
-                        <h3>Reparación de Laptops</h3>
-                        <p>Servicios especializados en reparación de laptops de todas las marcas y modelos.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card">
-                        <i class="fas fa-desktop service-icon"></i>
-                        <h3>Mantenimiento de PC</h3>
-                        <p>Mantenimiento preventivo y correctivo para asegurar el óptimo rendimiento de tu equipo.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card">
-                        <i class="fas fa-save service-icon"></i>
-                        <h3>Recuperación de Datos</h3>
-                        <p>Recuperación de datos perdidos por fallos de hardware, software o errores humanos.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card">
-                        <i class="fas fa-shield-alt service-icon"></i>
-                        <h3>Instalación de Antivirus</h3>
-                        <p>Instalación y configuración de software antivirus para proteger tu equipo de amenazas.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card">
-                        <i class="fas fa-network-wired service-icon"></i>
-                        <h3>Configuración de Redes</h3>
-                        <p>Configuración y solución de problemas de redes cableadas e inalámbricas.</p>
-                    </div>
-                </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Trámites y tecnología fácil en México. Todos los derechos reservados.</p>
             </div>
-        </section>
-
-        <section id="contacto" class="container-fluid bg-light py-5">
-            <div class="container">
-                <h2 class="section-title">Contáctanos</h2>
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <form id="contact-form" class="contact-form">
-                            <div class="mb-3">
-                                <label for="nombre" class="form-label">Nombre:</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email:</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="telefono" class="form-label">Teléfono:</label>
-                                <input type="tel" class="form-control" id="telefono" name="telefono" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="mensaje" class="form-label">Mensaje:</label>
-                                <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100">Enviar Mensaje</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Servicio Técnico de PC y Laptops | <a href="#">Política de Privacidad</a></p>
         </div>
     </footer>
 
-    <div id="message-box" class=""></div>
-        </body>
-</html>
+    <div id="privacy-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl max-h-[80vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold">Política de Privacidad</h3>
+                    <button onclick="closePrivacyModal()" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                <div class="prose max-w-none">
+                    <h4 class="text-lg font-semibold mb-3">Información que recopilamos</h4>
+                    <p class="mb-4">Recopilamos información que nos proporcionas directamente, como cuando te suscribes a nuestro boletín o nos contactas.</p>
+                    
+                    <h4 class="text-lg font-semibold mb-3">Uso de cookies</h4>
+                    <p class="mb-4">Utilizamos cookies para mejorar tu experiencia en nuestro sitio web y para mostrar anuncios relevantes a través de Google AdSense.</p>
+                    
+                    <h4 class="text-lg font-semibold mb-3">Google AdSense</h4>
+                    <p class="mb-4">Este sitio utiliza Google AdSense para mostrar anuncios. Google puede usar cookies para mostrar anuncios basados en tus visitas anteriores a este sitio web.</p>
+                    
+                    <h4 class="text-lg font-semibold mb-3">Tus derechos</h4>
+                    <p class="mb-4">Tienes derecho a acceder, rectificar o eliminar tus datos personales. Puedes contactarnos para ejercer estos derechos.</p>
+                    
+                    <h4 class="text-lg font-semibold mb-3">Contacto</h4>
+                    <p>Si tienes preguntas sobre esta política de privacidad, puedes contactarnos a través del formulario de contacto.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
+            <div class="mb-4 md:mb-0">
+                <p class="text-sm">
+                    <i class="fas fa-cookie-bite mr-2"></i>
+                    Utilizamos cookies para mejorar tu experiencia y mostrar anuncios personalizados. 
+                    <a href="#privacidad" onclick="openPrivacyModal()" class="underline hover:text-gray-300">Ver política de privacidad</a>
+                </p>
+            </div>
+            <div class="flex space-x-4">
+                <button onclick="acceptCookies()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">
+                    Aceptar
+                </button>
+                <button onclick="rejectCookies()" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition duration-300">
+                    Rechazar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
